@@ -33,10 +33,10 @@ while 1:
 
     # defining the object and localising it to a timezone
     obj = datetime.now()
-    #obj = obj.replace(hour=int(timeStart[0]))
-    #obj = obj.replace(minute=int(timeStart[1]))
-    #obj = obj.replace(second=0)
-    obj = obj + timedelta(seconds=10)
+    obj = obj.replace(hour=int(timeStart[0]))
+    obj = obj.replace(minute=int(timeStart[1]))
+    obj = obj.replace(second=0)
+    obj = obj + timedelta(days=1)
     tz = pytz.timezone('Europe/Dublin')
     obj = tz.localize(obj)
      
