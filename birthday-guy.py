@@ -32,10 +32,11 @@ while 1:
     # currentDate = '12/30' # used for testing (best birthday)
 
     # defining the object and localising it to a timezone
-    obj = datetime.now() + timedelta(days=1)
-    obj = obj.replace(hour=int(timeStart[0]))
-    obj = obj.replace(minute=int(timeStart[1]))
-    obj = obj.replace(second=0)
+    obj = datetime.now()
+    #obj = obj.replace(hour=int(timeStart[0]))
+    #obj = obj.replace(minute=int(timeStart[1]))
+    #obj = obj.replace(second=0)
+    obj = obj + timedelta(seconds=10)
     tz = pytz.timezone('Europe/Dublin')
     obj = tz.localize(obj)
      
