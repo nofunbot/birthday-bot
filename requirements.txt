@@ -120,7 +120,6 @@ values==2020.12.3
 websocket==0.2.1
 websocket-client==1.2.3
 websockets==10.2
-Werkzeug==2.2.2
 windows-curses==2.3.0
 wsproto==1.2.0
 yarl==1.7.2
