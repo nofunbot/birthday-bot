@@ -3,7 +3,7 @@ import csv
 import datetime
 
 # GroupMe Bot ID
-botID = '****************************'  # insert your Bot ID here
+botID = '93ea5208d4fb6bdfb5386ab2a3'  # insert your Bot ID here
 
 # List of names with a birthday on the current date
 birthdayBoys = []
@@ -45,4 +45,5 @@ elif len(lastNames) > 1:
 postData = {'bot_id': botID,
             'text': postText}
 
-r = requests.post('https://api.groupme.com/v3/bots/post', data=postData)
+r = requests.post('https://api.groupme.com/v3/bots/post', json=postData)
+print(r)
