@@ -117,13 +117,9 @@ update-checker==0.18.0
 uritemplate==4.1.1
 urllib3==1.26.8
 values==2020.12.3
-websocket==0.2.1
-websocket-client==1.2.3
-websockets==10.2
 windows-curses==2.3.0
 wsproto==1.2.0
 yarl==1.7.2
-youtubetaggenerator==2.0.0
 zipp==3.9.0
 zope.event==4.5.0
 zope.interface==5.4.0
