@@ -1,0 +1,15 @@
+# THIS IS THE CONFIG.yml FILE TO SETUP DATA FOR THE BOT :)
+
+# The bot ID can be found on "https://dev.groupme.com/bots"
+botID: '93ea5208d4fb6bdfb5386ab2a3'
+
+# Text that will be shown before the name of person
+# (you can use emoji as seen on this page: "https://emojipedia.org/") P.S. replace spaces with underscore "_"
+postText: ":party_popper: Happy Birthday to Brother "
+
+# Time at what to start the bot like: "9:00"
+timeStart: "9:00"
+
+# Timezone which is used to start the bot like: "America/Los_Angeles"
+# (see full list of variants: "https://mljar.com/blog/list-pytz-timezones/")
+timezone: "America/Los_Angeles"
