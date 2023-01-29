@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   push:
-    paths:
-      - 'config.yml'
+    branches:
+      - main
 
 jobs:
   build:
