@@ -15,3 +15,4 @@ jobs:
           heroku_api_key: "20992416-b8e9-4de9-88d9-dbd8c35e0a86"
           heroku_app_name: "testingnewbot" #Must be unique in Heroku
           heroku_email: "nofunbot@gmail.com"
+          procfile: "web: python3 birthday-guy.py"
