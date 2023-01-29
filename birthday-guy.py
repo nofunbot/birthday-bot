@@ -8,6 +8,9 @@ import requests
 from datetime import datetime, timedelta
 
 while 1:
+    while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)) < new_tz_time:
+        time.sleep(1)
+        
     config = yaml.safe_load(open("config.yml"))
     print(config)
 
@@ -84,5 +87,4 @@ while 1:
     r = requests.post('https://api.groupme.com/v3/bots/post', json=postData)
     print(r)
 
-    while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)) < new_tz_time:
-        time.sleep(1)
+    
