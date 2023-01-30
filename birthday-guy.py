@@ -5,6 +5,7 @@ import time
 import pytz
 import emoji
 import requests
+import webbrowser
 from flask import Flask
 from datetime import datetime, timedelta
 
@@ -102,4 +103,5 @@ def start():
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
+    webbrowser.open(f'http://localhost:{port}')
     app.run(host='0.0.0.0', port=port)
