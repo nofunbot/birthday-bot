@@ -51,6 +51,8 @@ while 1:
     print(new_tz_time)
 
     while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute != new_tz_time.minute or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour != new_tz_time.hour:
+        print(f"sleeping, time is: hour - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour} minute - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute}")
+        print(f'waiting for: hour - {new_tz_time.hour} minute - {new_tz_time.minute} ')
         time.sleep(60)
 
     # Turn birthday-list.csv into a dictionary and create a list of birthday bois
