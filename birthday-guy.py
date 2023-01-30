@@ -50,10 +50,10 @@ while 1:
     # Printing out new time
     print(new_tz_time)
 
-    while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute != new_tz_time.minute or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour != new_tz_time.hour:
-        print(f"sleeping, time is: hour - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour} minute - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute}")
+    while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute != new_tz_time.minute or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour != new_tz_time.hour or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).second > 20:
+        print(f"sleeping, time is: hour - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour} minute - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute} second - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).second}")
         print(f'waiting for: hour - {new_tz_time.hour} minute - {new_tz_time.minute} ')
-        time.sleep(60)
+        time.sleep(20)
 
     # Turn birthday-list.csv into a dictionary and create a list of birthday bois
     with open('birthday-list.csv', mode='r', encoding="utf-8-sig") as csv_file:
@@ -89,6 +89,6 @@ while 1:
 
     r = requests.post('https://api.groupme.com/v3/bots/post', json=postData)
     print(r)
-    time.sleep(60)
+    time.sleep(20)
 
     
