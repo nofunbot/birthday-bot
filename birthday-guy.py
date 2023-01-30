@@ -49,7 +49,7 @@ def start(args):
         new_tz = pytz.timezone(timezone)
          
         # Changing the timezone of our object
-        new_tz_time = obj.astimezone(new_tz)
+        new_tz_time = obj
          
         # Printing out new time
         print(new_tz_time)
