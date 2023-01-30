@@ -38,14 +38,14 @@ while 1:
     obj = obj.replace(minute=int(timeStart[1]))
     obj = obj.replace(second=0)
     obj = obj + timedelta(days=1)
-    tz = pytz.timezone('Europe/Dublin')
+    tz = pytz.timezone(timezone)
     obj = tz.localize(obj)
      
     # Creating a new timezone
     new_tz = pytz.timezone(timezone)
      
     # Changing the timezone of our object
-    new_tz_time = obj.astimezone(new_tz)
+    new_tz_time = obj
      
     # Printing out new time
     print(new_tz_time)
