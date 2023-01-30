@@ -5,12 +5,14 @@ import time
 import pytz
 import emoji
 import requests
+import webbrowser
 from flask import Flask
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-def start(args):
+@app.route('/')
+def start():
     print("STARTED RUNNING FUNCTION 'START()'")
     while 1:
         
@@ -100,15 +102,16 @@ def start(args):
         time.sleep(40)
 
 
-@app.before_first_request(start)
+#@app.before_first_request(start)
 
-@app.route('/')
-def hello_world():
-    print("hello world")
+
+#def hello_world():
+#    print("hello world")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    print("trying to run before first request funcs")
-    print(app.before_first_request_funcs)
-    print("finished running before first request funcs")
+    #print("trying to run before first request funcs")
+    #print(app.before_first_request_funcs)
+    #print("finished running before first request funcs")
+    webbrowser.open(f'http://localhost:{port}')
     app.run(host='0.0.0.0', port=port)
