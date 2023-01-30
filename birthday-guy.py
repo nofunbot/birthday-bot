@@ -6,12 +6,18 @@ import pytz
 import emoji
 import requests
 import webbrowser
+import sys, threading
 from flask import Flask
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
+threads = list()
+
 @app.route('/')
+def hello_world():
+    print("hello world")
+
 def start():
     print("STARTED RUNNING FUNCTION 'START()'")
     while 1:
@@ -104,14 +110,18 @@ def start():
 
 #@app.before_first_request(start)
 
-
-#def hello_world():
-#    print("hello world")
-
-if __name__ == "__main__":
+def run_app():
     port = int(os.environ.get("PORT", 5000))
     #print("trying to run before first request funcs")
     #print(app.before_first_request_funcs)
     #print("finished running before first request funcs")
-    webbrowser.open(f'http://localhost:{port}')
+    #webbrowser.open(f'http://localhost:{port}')
     app.run(host='0.0.0.0', port=port)
+
+if __name__ == "__main__":
+    y = threading.Thread(target=run_app)
+    threads.append(y)
+    y.start()
+    x = threading.Thread(target=start)
+    threads.append(x)
+    x.start()
