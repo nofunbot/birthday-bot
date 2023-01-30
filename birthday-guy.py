@@ -5,14 +5,12 @@ import time
 import pytz
 import emoji
 import requests
-import webbrowser
 from flask import Flask
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-@app.route("/")
-def start():
+def start(args):
     while 1:
         
 
@@ -100,8 +98,14 @@ def start():
         #print(f'waiting for: hour - {new_tz_time.hour} minute - {new_tz_time.minute} ')
         time.sleep(40)
 
-    
+
+@app.before_first_request(start)
+
+@app.route('/')
+def hello_world():
+    print("hello world")
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    webbrowser.open(f'http://localhost:{port}')
+    print(app.before_first_request_funcs)
     app.run(host='0.0.0.0', port=port)
