@@ -1,1 +1,1 @@
-web: python3 birthday-guy.py $PORT
+web: python3 birthday-guy.py
