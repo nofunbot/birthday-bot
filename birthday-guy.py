@@ -63,10 +63,10 @@ def start():
         # Printing out new time
         print(new_tz_time)
 
-        while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute != new_tz_time.minute or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour != new_tz_time.hour or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).second > 20:
+        while pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute != new_tz_time.minute or pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour != new_tz_time.hour:
             print(f"sleeping, time is: hour - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour} minute - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute} second - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).second}")
             print(f'waiting for: hour - {new_tz_time.hour} minute - {new_tz_time.minute} ')
-            time.sleep(20)
+            time.sleep(60)
 
         # Turn birthday-list.csv into a dictionary and create a list of birthday bois
         with open('birthday-list.csv', mode='r', encoding="utf-8-sig") as csv_file:
@@ -105,7 +105,7 @@ def start():
 
         #print(f"sleeping, time is: hour - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).hour} minute - {pytz.timezone('Europe/Dublin').localize(datetime.now()).astimezone(pytz.timezone(timezone)).minute}")
         #print(f'waiting for: hour - {new_tz_time.hour} minute - {new_tz_time.minute} ')
-        time.sleep(20)
+        time.sleep(60)
 
 
 #@app.before_first_request(start)
